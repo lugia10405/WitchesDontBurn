@@ -1,0 +1,27 @@
+Event	ID	Name			Wwise Object Path	Notes
+	202194903	Music_Play			\Default Work Unit\Music_Play	
+	656410073	SFX_OnFire_Big			\Default Work Unit\SFX_OnFire_Big	
+	839254991	SFX_FireOut			\Default Work Unit\SFX_FireOut	
+	1853415142	SFX_OnFire_Small			\Default Work Unit\SFX_OnFire_Small	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	125960812	SFX_FireOut_2	C:\Users\Tracy Chang\Documents\WitchesDontBurn\WitchesDontBurn\WitchesDontBurn_WwiseProject\.cache\Mac\SFX\SFX_FireOut_2_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\WDB_SFX\SFX_FireOut\SFX_FireOut_2		220072
+	130284267	SFX_FireOut_1	C:\Users\Tracy Chang\Documents\WitchesDontBurn\WitchesDontBurn\WitchesDontBurn_WwiseProject\.cache\Mac\SFX\SFX_FireOut_1_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\WDB_SFX\SFX_FireOut\SFX_FireOut_1		223424
+	177974528	SFX_FireBurst_Low_3	C:\Users\Tracy Chang\Documents\WitchesDontBurn\WitchesDontBurn\WitchesDontBurn_WwiseProject\.cache\Mac\SFX\SFX_FireBurst_Low_3_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\WDB_SFX\SFX_FireBurst_Low\SFX_FireBurst_Low_3		120046
+	208710280	WDB_Music_Intro	C:\Users\Tracy Chang\Documents\WitchesDontBurn\WitchesDontBurn\WitchesDontBurn_WwiseProject\.cache\Mac\SFX\WDB_Music_Intro_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\WDB_Music\WDB_Music_Intro\WDB_Music_Intro		1738260
+	225232292	SFX_FireBurst_High_1	C:\Users\Tracy Chang\Documents\WitchesDontBurn\WitchesDontBurn\WitchesDontBurn_WwiseProject\.cache\Mac\SFX\SFX_FireBurst_High_1_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\WDB_SFX\SFX_FireBurst_High\SFX_FireBurst_High_1		142628
+	276830193	SFX_FireOut_0	C:\Users\Tracy Chang\Documents\WitchesDontBurn\WitchesDontBurn\WitchesDontBurn_WwiseProject\.cache\Mac\SFX\SFX_FireOut_0_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\WDB_SFX\SFX_FireOut\SFX_FireOut_0		210434
+	304114161	SFX_FireBurst_High_0	C:\Users\Tracy Chang\Documents\WitchesDontBurn\WitchesDontBurn\WitchesDontBurn_WwiseProject\.cache\Mac\SFX\SFX_FireBurst_High_0_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\WDB_SFX\SFX_FireBurst_High\SFX_FireBurst_High_0		214108
+	311109910	SFX_FireBurst_Low_1	C:\Users\Tracy Chang\Documents\WitchesDontBurn\WitchesDontBurn\WitchesDontBurn_WwiseProject\.cache\Mac\SFX\SFX_FireBurst_Low_1_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\WDB_SFX\SFX_FireBurst_Low\SFX_FireBurst_Low_1		40380
+	780700293	SFX_FireBurst_High_2	C:\Users\Tracy Chang\Documents\WitchesDontBurn\WitchesDontBurn\WitchesDontBurn_WwiseProject\.cache\Mac\SFX\SFX_FireBurst_High_2_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\WDB_SFX\SFX_FireBurst_High\SFX_FireBurst_High_2		148156
+	786349058	SFX_FireBurst_Low_2	C:\Users\Tracy Chang\Documents\WitchesDontBurn\WitchesDontBurn\WitchesDontBurn_WwiseProject\.cache\Mac\SFX\SFX_FireBurst_Low_2_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\WDB_SFX\SFX_FireBurst_Low\SFX_FireBurst_Low_2		119578
+	830636734	SFX_FireBurst_Low_0	C:\Users\Tracy Chang\Documents\WitchesDontBurn\WitchesDontBurn\WitchesDontBurn_WwiseProject\.cache\Mac\SFX\SFX_FireBurst_Low_0_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\WDB_SFX\SFX_FireBurst_Low\SFX_FireBurst_Low_0		77242
+	914571091	SFX_FireBurst_High_3	C:\Users\Tracy Chang\Documents\WitchesDontBurn\WitchesDontBurn\WitchesDontBurn_WwiseProject\.cache\Mac\SFX\SFX_FireBurst_High_3_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\WDB_SFX\SFX_FireBurst_High\SFX_FireBurst_High_3		158150
+	1061503968	WDB_Music_Loop	C:\Users\Tracy Chang\Documents\WitchesDontBurn\WitchesDontBurn\WitchesDontBurn_WwiseProject\.cache\Mac\SFX\WDB_Music_Loop_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\WDB_Music\WDB_Music_Loop\WDB_Music_Loop		13827836
+
+Streamed Audio	ID	Name	Audio source file	Generated audio file	Wwise Object Path	Notes
+	178363526	SFX_FireLoop_High_1	C:\Users\Tracy Chang\Documents\WitchesDontBurn\WitchesDontBurn\WitchesDontBurn_WwiseProject\.cache\Mac\SFX\SFX_FireLoop_High_1_0F94CB7C.wem	178363526.wem	\Actor-Mixer Hierarchy\Default Work Unit\WDB_SFX\SFX_FireLoop_High\SFX_FireLoop_High_1	
+	446594407	SFX_FireLoop_Low_0	C:\Users\Tracy Chang\Documents\WitchesDontBurn\WitchesDontBurn\WitchesDontBurn_WwiseProject\.cache\Mac\SFX\SFX_FireLoop_Low_0_E025175B.wem	446594407.wem	\Actor-Mixer Hierarchy\Default Work Unit\WDB_SFX\SFX_FireLoop_Low\SFX_FireLoop_Low_0	
+	630890796	SFX_FireLoop_Low_1	C:\Users\Tracy Chang\Documents\WitchesDontBurn\WitchesDontBurn\WitchesDontBurn_WwiseProject\.cache\Mac\SFX\SFX_FireLoop_Low_1_B826DDC4.wem	630890796.wem	\Actor-Mixer Hierarchy\Default Work Unit\WDB_SFX\SFX_FireLoop_Low\SFX_FireLoop_Low_1	
+	793362413	SFX_FireLoop_High_0	C:\Users\Tracy Chang\Documents\WitchesDontBurn\WitchesDontBurn\WitchesDontBurn_WwiseProject\.cache\Mac\SFX\SFX_FireLoop_High_0_E9B7A4D0.wem	793362413.wem	\Actor-Mixer Hierarchy\Default Work Unit\WDB_SFX\SFX_FireLoop_High\SFX_FireLoop_High_0	
+

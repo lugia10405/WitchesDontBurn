@@ -60,6 +60,50 @@
 								</Reference>
 							</ReferenceList>
 						</Action>
+						<Action Name="" ID="{145DCF0C-73CA-43C9-AE6C-7F404B733DE6}" ShortID="750756639">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+								<Property Name="FadeTime" Type="Real64" Value="0.5"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="SFX_FireLoop_Low" ID="{13B3A6E3-A477-4338-B268-35861738C286}" WorkUnitID="{62AF510D-413B-481D-A989-F14C978987CE}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="SFX_FireOut" ID="{CB32F3FF-93BB-4762-9F5F-A56A5102963F}">
+					<ChildrenList>
+						<Action Name="" ID="{5DE632C4-87F9-4E2D-86BE-94586FE5F619}" ShortID="344112716">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="SFX_FireOut" ID="{E66657E2-6EFD-4587-BF5F-88FF8DB8D65C}" WorkUnitID="{62AF510D-413B-481D-A989-F14C978987CE}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{267A5DCC-0B26-486E-93D9-3052391AEF17}" ShortID="1061251186">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+								<Property Name="FadeTime" Type="Real64" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="SFX_FireLoop_High" ID="{CD57B2CB-F8C3-40BA-AEBA-3E94976BDDBC}" WorkUnitID="{62AF510D-413B-481D-A989-F14C978987CE}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{496A9D9B-70B8-4411-B377-79E1D6D8857B}" ShortID="715250565">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+								<Property Name="FadeTime" Type="Real64" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="SFX_FireLoop_Low" ID="{13B3A6E3-A477-4338-B268-35861738C286}" WorkUnitID="{62AF510D-413B-481D-A989-F14C978987CE}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
 					</ChildrenList>
 				</Event>
 			</ChildrenList>
