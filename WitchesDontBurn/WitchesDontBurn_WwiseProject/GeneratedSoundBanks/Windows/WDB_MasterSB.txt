@@ -1,12 +1,16 @@
 Event	ID	Name			Wwise Object Path	Notes
 	202194903	Music_Play			\Default Work Unit\Music_Play	
 	656410073	SFX_OnFire_Big			\Default Work Unit\SFX_OnFire_Big	
+	839254991	SFX_FireOut			\Default Work Unit\SFX_FireOut	
 	1853415142	SFX_OnFire_Small			\Default Work Unit\SFX_OnFire_Small	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	125960812	SFX_FireOut_2	C:\Users\Tracy Chang\Documents\WitchesDontBurn\WitchesDontBurn\WitchesDontBurn_WwiseProject\.cache\Windows\SFX\SFX_FireOut_2_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\WDB_SFX\SFX_FireOut\SFX_FireOut_2		220072
+	130284267	SFX_FireOut_1	C:\Users\Tracy Chang\Documents\WitchesDontBurn\WitchesDontBurn\WitchesDontBurn_WwiseProject\.cache\Windows\SFX\SFX_FireOut_1_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\WDB_SFX\SFX_FireOut\SFX_FireOut_1		223424
 	177974528	SFX_FireBurst_Low_3	C:\Users\Tracy Chang\Documents\WitchesDontBurn\WitchesDontBurn\WitchesDontBurn_WwiseProject\.cache\Windows\SFX\SFX_FireBurst_Low_3_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\WDB_SFX\SFX_FireBurst_Low\SFX_FireBurst_Low_3		120046
 	208710280	WDB_Music_Intro	C:\Users\Tracy Chang\Documents\WitchesDontBurn\WitchesDontBurn\WitchesDontBurn_WwiseProject\.cache\Windows\SFX\WDB_Music_Intro_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\WDB_Music\WDB_Music_Intro\WDB_Music_Intro		1738260
 	225232292	SFX_FireBurst_High_1	C:\Users\Tracy Chang\Documents\WitchesDontBurn\WitchesDontBurn\WitchesDontBurn_WwiseProject\.cache\Windows\SFX\SFX_FireBurst_High_1_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\WDB_SFX\SFX_FireBurst_High\SFX_FireBurst_High_1		142628
+	276830193	SFX_FireOut_0	C:\Users\Tracy Chang\Documents\WitchesDontBurn\WitchesDontBurn\WitchesDontBurn_WwiseProject\.cache\Windows\SFX\SFX_FireOut_0_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\WDB_SFX\SFX_FireOut\SFX_FireOut_0		210434
 	304114161	SFX_FireBurst_High_0	C:\Users\Tracy Chang\Documents\WitchesDontBurn\WitchesDontBurn\WitchesDontBurn_WwiseProject\.cache\Windows\SFX\SFX_FireBurst_High_0_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\WDB_SFX\SFX_FireBurst_High\SFX_FireBurst_High_0		214108
 	311109910	SFX_FireBurst_Low_1	C:\Users\Tracy Chang\Documents\WitchesDontBurn\WitchesDontBurn\WitchesDontBurn_WwiseProject\.cache\Windows\SFX\SFX_FireBurst_Low_1_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\WDB_SFX\SFX_FireBurst_Low\SFX_FireBurst_Low_1		40380
 	780700293	SFX_FireBurst_High_2	C:\Users\Tracy Chang\Documents\WitchesDontBurn\WitchesDontBurn\WitchesDontBurn_WwiseProject\.cache\Windows\SFX\SFX_FireBurst_High_2_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\WDB_SFX\SFX_FireBurst_High\SFX_FireBurst_High_2		148156
