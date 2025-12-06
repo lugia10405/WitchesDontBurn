@@ -51,6 +51,11 @@ public class DetectTrigger : MonoBehaviour
         {
             Destroy(hitObject);
         }
+
+        if (hitObject.CompareTag("Window"))
+        {
+           
+        }
     }// 
      // 
      //Start is called once before the first execution of Update after the MonoBehaviour is created
