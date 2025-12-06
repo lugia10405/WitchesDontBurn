@@ -9,6 +9,14 @@
 							<ObjectRef Name="WDB_Music" ID="{D6150597-A23A-4209-9504-B63AC757FB71}" WorkUnitID="{1771321E-2843-4611-80FA-DCD0A74C5DEF}"/>
 							<Position X="0" Y="0"/>
 						</Module>
+						<Module>
+							<ObjectRef Name="SFX_OnFire_Big" ID="{4B6C8592-B9F8-499C-B414-D4EDA35BA647}" WorkUnitID="{3DB3C97A-08D0-40B9-BD6D-576D044E1015}"/>
+							<Position X="2" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="SFX_OnFire_Small" ID="{D598C8DC-8D24-46ED-9139-F1787E0575E0}" WorkUnitID="{3DB3C97A-08D0-40B9-BD6D-576D044E1015}"/>
+							<Position X="2" Y="1"/>
+						</Module>
 					</ModuleList>
 					<RTPCValueList ShowAll="true"/>
 					<CurrentStateList ShowAll="true"/>

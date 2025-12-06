@@ -4,11 +4,59 @@
 		<WorkUnit Name="Default Work Unit" ID="{3DB3C97A-08D0-40B9-BD6D-576D044E1015}" PersistMode="Standalone">
 			<ChildrenList>
 				<Event Name="Music_Play" ID="{A20962D5-926D-44A9-82E4-5046A07E5C00}">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="10"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
 					<ChildrenList>
 						<Action Name="" ID="{FD6DF0B2-C9F0-4FC7-B5F0-D910DC42B90A}" ShortID="484262468">
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="WDB_Music" ID="{D6150597-A23A-4209-9504-B63AC757FB71}" WorkUnitID="{1771321E-2843-4611-80FA-DCD0A74C5DEF}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="SFX_OnFire_Small" ID="{D598C8DC-8D24-46ED-9139-F1787E0575E0}">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="2"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+					<ChildrenList>
+						<Action Name="" ID="{8A922BE4-D9B1-404C-B4AD-68850C9B9107}" ShortID="113026889">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="SFX_FireBurst_Low" ID="{F88AF64F-6B60-40F9-8543-FA60A1E53C37}" WorkUnitID="{62AF510D-413B-481D-A989-F14C978987CE}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{D5024889-B310-4735-AE1C-5DCD2279F3DA}" ShortID="895394220">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="SFX_FireLoop_Low" ID="{13B3A6E3-A477-4338-B268-35861738C286}" WorkUnitID="{62AF510D-413B-481D-A989-F14C978987CE}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="SFX_OnFire_Big" ID="{4B6C8592-B9F8-499C-B414-D4EDA35BA647}">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="2"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+					<ChildrenList>
+						<Action Name="" ID="{2CA57D8B-2A46-4E14-AADC-E96BAE51DB81}" ShortID="986041329">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="SFX_FireBurst_High" ID="{12CD7C2D-9AAE-4415-87DD-D65A31D90DD9}" WorkUnitID="{62AF510D-413B-481D-A989-F14C978987CE}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{E4EE812C-1200-403A-8EE7-05A19E85DE7C}" ShortID="244661967">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="SFX_FireLoop_High" ID="{CD57B2CB-F8C3-40BA-AEBA-3E94976BDDBC}" WorkUnitID="{62AF510D-413B-481D-A989-F14C978987CE}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
