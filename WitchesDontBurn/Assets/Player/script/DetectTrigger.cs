@@ -9,25 +9,47 @@ public class DetectTrigger : MonoBehaviour
     private CharacterController characterController;
     void Awake()
     {
+        // try to get CharacterController on this object, or parent (in case this script is on a child pickup zone)
         characterController = GetComponent<CharacterController>();
+        if (characterController == null)
+            characterController = GetComponentInParent<CharacterController>();
     }
     private void OnTriggerEnter2D(Collider2D other) 
     {
-        if (other.CompareTag("BigWater"))
+        // diagnostic log to see what collider is hitting
+        Debug.Log($"DetectTrigger: OnTriggerEnter2D with '{other.gameObject.name}' tag={other.gameObject.tag} layer={LayerMask.LayerToName(other.gameObject.layer)}");
+
+        // If the collider belongs to a child of the water prefab, use root to find the prefab root
+        GameObject hitObject = other.gameObject;
+        if (other.transform.root != null && other.transform.root != other.transform)
         {
-            characterController.currentWater+=3;
+            hitObject = other.transform.root.gameObject;
         }
-        else if (other.CompareTag("SmallWater"))
+
+        // safety: ensure we have a character controller
+        if (characterController == null)
         {
-            characterController.currentWater+=1;
+            Debug.LogWarning("DetectTrigger: CharacterController not found when picking up water.");
+            return;
         }
+
+        if (hitObject.CompareTag("BigWater"))
+        {
+            characterController.currentWater += 3;
+        }
+        else if (hitObject.CompareTag("SmallWater"))
+        {
+            characterController.currentWater += 1;
+        }
+
         if (characterController.currentWater > 6)
         {
             characterController.currentWater = 6;
         }
-        if (other.CompareTag("BigWater") || other.CompareTag("SmallWater"))
+
+        if (hitObject.CompareTag("BigWater") || hitObject.CompareTag("SmallWater"))
         {
-            Destroy(other.gameObject);
+            Destroy(hitObject);
         }
     }// 
      // 

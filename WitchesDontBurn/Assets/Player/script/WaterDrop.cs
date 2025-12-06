@@ -13,6 +13,17 @@ public class WaterDrop : MonoBehaviour
     public float spawnWidthMin = -8f; // 水平範圍最小
     public float spawnWidthMax = 8f; // 水平範圍最大
     
+    [Header("Drop physics")]
+    [Tooltip("Gravity scale applied to spawned water (lower = slower fall)")]
+    public float dropGravityScale = 1f;
+    [Tooltip("Linear drag applied to spawned water (higher = slower fall)")]
+    public float dropLinearDrag = 5f;
+    [Header("Alternate fall mode")]
+    [Tooltip("When true, spawned drops ignore gravity and use a constant downward speed.")]
+    public bool useConstantFallSpeed = false;
+    [Tooltip("Constant downward speed (units/sec) when using constant fall mode")]
+    public float constantFallSpeed = 1f;
+    
     private CharacterController characterController;
     private void Awake()
     {
@@ -45,22 +56,31 @@ public class WaterDrop : MonoBehaviour
 
             float currentWater = characterController.currentWater; // 確保此欄位是 public 或 internal 可存取
 
-            // 判斷要不要掉小水 or 大水，並設定下一次等待時間
-            if (currentWater >= 4f && currentWater <= 6f)
+            // 判斷要不要掉大水或小水：
+            // 1) 如果水 <= 2 -> 持續掉大水直到 currentWater >= 6（可重複觸發）
+            // 2) 否則如果水 <= 4 -> 持續掉小水直到 currentWater >= 6（可重複觸發）
+            if (currentWater <= 2f)
             {
-                SpawnPrefab(SmallWater);
-                float wait = Random.Range(3f, 5f);
-                yield return new WaitForSeconds(wait);
+                while (characterController != null && characterController.currentWater < 6f)
+                {
+                    SpawnPrefab(BigWater);
+                    float wait = Random.Range(5f, 7f);
+                    yield return new WaitForSeconds(wait);
+                }
+                // 重新評估狀態
+                continue;
             }
-            else if (currentWater >= 2f && currentWater <= 6f)
+
+            if (currentWater <= 4f)
             {
-                SpawnPrefab(BigWater);
-                float wait = Random.Range(5f, 7f);
-                yield return new WaitForSeconds(wait);
-            }
-            else
-            {
-                yield return new WaitForSeconds(1f);
+                while (characterController != null && characterController.currentWater < 6f)
+                {
+                    SpawnPrefab(SmallWater);
+                    float wait = Random.Range(3f, 5f);
+                    yield return new WaitForSeconds(wait);
+                }
+                // 重新評估狀態
+                continue;
             }
         }
     }
@@ -68,18 +88,24 @@ public class WaterDrop : MonoBehaviour
     {
         if (prefab == null) return;
 
-        // 隨機水平位置，固定高度
         float randomX = Random.Range(spawnWidthMin, spawnWidthMax);
         Vector2 spawnPos = new Vector2(randomX, spawnYHeight);
 
         GameObject instance = Instantiate(prefab, spawnPos, Quaternion.identity);
-
-        // 確保 Rigidbody2D 存在
         Rigidbody2D rb = instance.GetComponent<Rigidbody2D>();
         if (rb == null)
         {
             rb = instance.AddComponent<Rigidbody2D>();
-            rb.gravityScale = 1f;
+        }
+        // apply gravity scale and drag correctly for Rigidbody2D
+        rb.gravityScale = dropGravityScale;
+        rb.linearDamping = dropLinearDrag;
+
+        // optional: use a constant fall speed instead of physics
+        if (useConstantFallSpeed)
+        {
+            rb.gravityScale = 0f;
+            rb.linearVelocity = new Vector2(0f, -Mathf.Abs(constantFallSpeed));
         }
     }
 }

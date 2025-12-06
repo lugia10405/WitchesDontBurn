@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4432474992399495143}
   - component: {fileID: 6731286226521952748}
-  - component: {fileID: 1905719440130950149}
   - component: {fileID: 5891563635946532684}
   - component: {fileID: 8468384478485214089}
   - component: {fileID: -6627047024843306564}
@@ -83,35 +82,17 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: 7abd20e86d228ad4daa9420e8677ff98, type: 3}
+  m_Sprite: {fileID: -9095717837082945937, guid: 6b61995e974a97b4a8dde9cc5201d46b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.2, y: 0.2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1905719440130950149
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 739795435776079726}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ea0b06adb5a678498521a9f56119911, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::WaterDrop
-  SmallWater: {fileID: 2723819917778901571, guid: da22ef559a6aabe42a2fb771ff6ef14a, type: 3}
-  BigWater: {fileID: 739795435776079726}
-  player: {fileID: 5040298985883225698, guid: e3101eb0b3d3ec742af8fad0142714c1, type: 3}
-  spawnYHeight: 10
-  spawnWidthMin: -8
-  spawnWidthMax: 8
 --- !u!70 &5891563635946532684
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -146,8 +127,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 1}
+  m_Offset: {x: 0, y: -0.00000032812906}
+  m_Size: {x: 0.9999998, y: 1.9975175}
   m_Direction: 0
 --- !u!50 &8468384478485214089
 Rigidbody2D:
@@ -175,7 +156,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &-6627047024843306564
 MonoBehaviour:
   m_ObjectHideFlags: 0
