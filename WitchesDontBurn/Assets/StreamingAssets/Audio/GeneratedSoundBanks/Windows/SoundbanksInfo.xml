@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="150">
+	<RootPaths>
+		<ProjectRoot>../..</ProjectRoot>
+		<SourceFilesRoot>../../.cache/Windows</SourceFilesRoot>
+		<SoundBanksRoot>.</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>.</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<SoundBanks>
+		<SoundBank Id="922085032" Type="User" Language="SFX" Hash="{63298EAB-10A5-C149-334D-753612B98294}">
+			<ShortName>WDB_MasterSB</ShortName>
+			<Path>WDB_MasterSB.bnk</Path>
+			<Media>
+				<File Id="125960812" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_FireOut_2.wav</ShortName>
+					<CachePath>SFX/SFX_FireOut_2_818F3B66.wem</CachePath>
+				</File>
+				<File Id="130284267" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_FireOut_1.wav</ShortName>
+					<CachePath>SFX/SFX_FireOut_1_818F3B66.wem</CachePath>
+				</File>
+				<File Id="177974528" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_FireBurst_Low_3.wav</ShortName>
+					<CachePath>SFX/SFX_FireBurst_Low_3_818F3B66.wem</CachePath>
+				</File>
+				<File Id="178363526" Language="SFX" Streaming="true" Location="Loose">
+					<ShortName>SFX_FireLoop_High_1.wav</ShortName>
+					<Path>Media/178363526.wem</Path>
+					<CachePath>SFX/SFX_FireLoop_High_1_0F94CB7C.wem</CachePath>
+				</File>
+				<File Id="208710280" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>WDB_Music_Intro.wav</ShortName>
+					<CachePath>SFX/WDB_Music_Intro_FBC78EF0.wem</CachePath>
+				</File>
+				<File Id="225232292" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_FireBurst_High_1.wav</ShortName>
+					<CachePath>SFX/SFX_FireBurst_High_1_818F3B66.wem</CachePath>
+				</File>
+				<File Id="276830193" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_FireOut_0.wav</ShortName>
+					<CachePath>SFX/SFX_FireOut_0_818F3B66.wem</CachePath>
+				</File>
+				<File Id="304114161" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_FireBurst_High_0.wav</ShortName>
+					<CachePath>SFX/SFX_FireBurst_High_0_818F3B66.wem</CachePath>
+				</File>
+				<File Id="311109910" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_FireBurst_Low_1.wav</ShortName>
+					<CachePath>SFX/SFX_FireBurst_Low_1_818F3B66.wem</CachePath>
+				</File>
+				<File Id="446594407" Language="SFX" Streaming="true" Location="Loose">
+					<ShortName>SFX_FireLoop_Low_0.wav</ShortName>
+					<Path>Media/446594407.wem</Path>
+					<CachePath>SFX/SFX_FireLoop_Low_0_E025175B.wem</CachePath>
+				</File>
+				<File Id="630890796" Language="SFX" Streaming="true" Location="Loose">
+					<ShortName>SFX_FireLoop_Low_1.wav</ShortName>
+					<Path>Media/630890796.wem</Path>
+					<CachePath>SFX/SFX_FireLoop_Low_1_B826DDC4.wem</CachePath>
+				</File>
+				<File Id="780700293" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_FireBurst_High_2.wav</ShortName>
+					<CachePath>SFX/SFX_FireBurst_High_2_818F3B66.wem</CachePath>
+				</File>
+				<File Id="786349058" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_FireBurst_Low_2.wav</ShortName>
+					<CachePath>SFX/SFX_FireBurst_Low_2_818F3B66.wem</CachePath>
+				</File>
+				<File Id="793362413" Language="SFX" Streaming="true" Location="Loose">
+					<ShortName>SFX_FireLoop_High_0.wav</ShortName>
+					<Path>Media/793362413.wem</Path>
+					<CachePath>SFX/SFX_FireLoop_High_0_E9B7A4D0.wem</CachePath>
+				</File>
+				<File Id="830636734" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_FireBurst_Low_0.wav</ShortName>
+					<CachePath>SFX/SFX_FireBurst_Low_0_818F3B66.wem</CachePath>
+				</File>
+				<File Id="914571091" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_FireBurst_High_3.wav</ShortName>
+					<CachePath>SFX/SFX_FireBurst_High_3_818F3B66.wem</CachePath>
+				</File>
+				<File Id="1061503968" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>WDB_Music_Loop.wav</ShortName>
+					<CachePath>SFX/WDB_Music_Loop_FBC78EF0.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="202194903" Name="Music_Play" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="208710280"/>
+						<MediaRef Id="1061503968"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="839254991" Name="SFX_FireOut" DurationType="OneShot" DurationMin="2.3847847" DurationMax="2.5320635">
+					<MediaRefs>
+						<MediaRef Id="125960812"/>
+						<MediaRef Id="130284267"/>
+						<MediaRef Id="276830193"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="656410073" Name="SFX_OnFire_Big" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="178363526"/>
+						<MediaRef Id="225232292"/>
+						<MediaRef Id="304114161"/>
+						<MediaRef Id="780700293"/>
+						<MediaRef Id="793362413"/>
+						<MediaRef Id="914571091"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1853415142" Name="SFX_OnFire_Small" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="177974528"/>
+						<MediaRef Id="311109910"/>
+						<MediaRef Id="446594407"/>
+						<MediaRef Id="630890796"/>
+						<MediaRef Id="786349058"/>
+						<MediaRef Id="830636734"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{B6CBD692-12EC-CDBA-0932-48F63C40C91F}">
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+			<Plugins>
+				<AudioDevices>
+					<Plugin Id="2317455096" Name="No_Output" LibName="No Output" LibId="11862023"/>
+					<Plugin Id="3859886410" Name="System" LibName="System" LibId="11403271"/>
+				</AudioDevices>
+			</Plugins>
+			<Busses>
+				<Bus Id="3803692087" Name="Master Audio Bus"/>
+			</Busses>
+		</SoundBank>
+	</SoundBanks>
+	<FileHash>{C21F7BB3-902A-0118-F695-9502B4832766}</FileHash>
+</SoundBanksInfo>

@@ -94,7 +94,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 7ac9b33dd008b940bd6d576d044e1015
     GuidInternal: 
-    m_lastTime: -8584365850068517487
+    m_lastTime: -8584365826516513429
     List:
     - name: Music_Play
       guid: d56209a26d92a94482e45046a07e5c00
@@ -113,6 +113,23 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: SFX_FireOut
+      guid: fff332cbbb9362479f5fa56a5102963f
+      id: 839254991
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 7ac9b33dd008b940bd6d576d044e1015
+      - ElementName: SFX_FireOut
+        ObjectType: 3
+        guid: fff332cbbb9362479f5fa56a5102963f
+      Path: Events\Default Work Unit\SFX_FireOut
+      maxAttenuation: 0
+      maxDuration: 2.5320635
+      minDuration: 2.3847847
     - name: SFX_OnFire_Big
       guid: 92856c4bf8b99c49b414d4eda35ba647
       id: 656410073
