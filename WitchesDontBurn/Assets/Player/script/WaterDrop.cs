@@ -54,11 +54,8 @@ public class WaterDrop : MonoBehaviour
                 continue;
             }
 
-            float currentWater = characterController.currentWater; // 確保此欄位是 public 或 internal 可存取
+            float currentWater = characterController.currentWater; 
 
-            // 判斷要不要掉大水或小水：
-            // 1) 如果水 <= 2 -> 持續掉大水直到 currentWater >= 6（可重複觸發）
-            // 2) 否則如果水 <= 4 -> 持續掉小水直到 currentWater >= 6（可重複觸發）
             if (currentWater <= 2f)
             {
                 while (characterController != null && characterController.currentWater < 6f)
@@ -67,7 +64,6 @@ public class WaterDrop : MonoBehaviour
                     float wait = Random.Range(5f, 7f);
                     yield return new WaitForSeconds(wait);
                 }
-                // 重新評估狀態
                 continue;
             }
 
@@ -79,7 +75,6 @@ public class WaterDrop : MonoBehaviour
                     float wait = Random.Range(3f, 5f);
                     yield return new WaitForSeconds(wait);
                 }
-                // 重新評估狀態
                 continue;
             }
         }
