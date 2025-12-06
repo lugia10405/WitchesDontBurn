@@ -94,7 +94,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 7ac9b33dd008b940bd6d576d044e1015
     GuidInternal: 
-    m_lastTime: -8584365922141096170
+    m_lastTime: -8584365850068517487
     List:
     - name: Music_Play
       guid: d56209a26d92a94482e45046a07e5c00
@@ -110,6 +110,40 @@ MonoBehaviour:
         ObjectType: 3
         guid: d56209a26d92a94482e45046a07e5c00
       Path: Events\Default Work Unit\Music_Play
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: SFX_OnFire_Big
+      guid: 92856c4bf8b99c49b414d4eda35ba647
+      id: 656410073
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 7ac9b33dd008b940bd6d576d044e1015
+      - ElementName: SFX_OnFire_Big
+        ObjectType: 3
+        guid: 92856c4bf8b99c49b414d4eda35ba647
+      Path: Events\Default Work Unit\SFX_OnFire_Big
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: SFX_OnFire_Small
+      guid: dcc898d5248ded469139f1787e0575e0
+      id: 1853415142
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 7ac9b33dd008b940bd6d576d044e1015
+      - ElementName: SFX_OnFire_Small
+        ObjectType: 3
+        guid: dcc898d5248ded469139f1787e0575e0
+      Path: Events\Default Work Unit\SFX_OnFire_Small
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
