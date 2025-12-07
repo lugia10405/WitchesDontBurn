@@ -10,7 +10,7 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Window
   - Water
   - UI
   - BigWater
@@ -42,6 +42,15 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: AlwaysInBack
+    uniqueID: 1547882185
+    locked: 0
+  - name: Medium
+    uniqueID: 585955683
+    locked: 0
+  - name: AlwaysOnTop
+    uniqueID: 2449463171
     locked: 0
   m_RenderingLayers:
   - Default
