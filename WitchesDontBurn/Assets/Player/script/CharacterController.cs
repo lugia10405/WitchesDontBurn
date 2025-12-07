@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class CharacterController : MonoBehaviour
 {
@@ -14,22 +13,6 @@ public class CharacterController : MonoBehaviour
     private bool CarryRequested = false;
     
     private Animator animator;
-    
-    [Header("Shooting")]
-    [Tooltip("Projectile prefab used when shooting water")]
-    public GameObject waterProjectilePrefab;
-    [Tooltip("Optional spawn point for projectiles. If null, player's position is used.")]
-    public Transform shootOrigin;
-    [Tooltip("Projectile speed in units/sec")]
-    public float shootSpeed = 10f;
-    [Tooltip("Seconds between shots")]
-    public float shootCooldown = 0.3f;
-    private float lastShootTime = -Mathf.Infinity;
-    
-    [Header("NPC Carrying")]
-    public bool isCarryingNPC = false;
-    public GameObject npcOnWindow = null;
-    public GameObject npcPrefabToDrop;
 
 
     private void Start()
@@ -78,40 +61,5 @@ public class CharacterController : MonoBehaviour
         return currentWater < maxWaterCapacity;
     }
 
-    public void ShootWater()
-    {
-        // cooldown
-        if (Time.time < lastShootTime + shootCooldown) return;
-        if (currentWater <= 0) return;
 
-        if (Mouse.current == null) return;
-        Vector2 mouseScreen = Mouse.current.position.ReadValue();
-
-        Camera cam = Camera.main;
-
-        Vector3 mouseWorld = cam.ScreenToWorldPoint(new Vector3(mouseScreen.x, mouseScreen.y, 0f));
-        mouseWorld.z = 0f;
-
-        // origin
-        Vector2 origin = shootOrigin != null ? (Vector2)shootOrigin.position : (Vector2)transform.position;
-
-        // direction
-        Vector2 direction = (mouseWorld - (Vector3)origin).normalized;
-
-        GameObject proj = Instantiate(waterProjectilePrefab, origin, Quaternion.identity);
-        Rigidbody2D prb = proj.GetComponent<Rigidbody2D>();
-        if (prb == null)
-            prb = proj.AddComponent<Rigidbody2D>();
-
-        prb.gravityScale = 0f;
-        prb.linearVelocity = direction * shootSpeed;
-
-        // tag
-        try { proj.tag = "ShootingWater"; } catch { }
-
-        Destroy(proj, 5f);
-
-        currentWater--;
-        lastShootTime = Time.time;
-    }
 }

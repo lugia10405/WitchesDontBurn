@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Linq;
 using UnityEngine;
 
 public class WaterDrop : MonoBehaviour
@@ -21,7 +20,7 @@ public class WaterDrop : MonoBehaviour
     public float dropLinearDrag = 5f;
     [Header("Alternate fall mode")]
     [Tooltip("When true, spawned drops ignore gravity and use a constant downward speed.")]
-    public bool useConstantFallSpeed = true;
+    public bool useConstantFallSpeed = false;
     [Tooltip("Constant downward speed (units/sec) when using constant fall mode")]
     public float constantFallSpeed = 1f;
     
@@ -35,8 +34,7 @@ public class WaterDrop : MonoBehaviour
     
     private void OnEnable()
     {
-        StartCoroutine(SmallWaterLoop());
-        StartCoroutine(BigWaterLoop());
+        StartCoroutine(SpawnLoop());
     }
 
     private void OnDisable()
@@ -44,7 +42,7 @@ public class WaterDrop : MonoBehaviour
         StopAllCoroutines();
     }
 
-    private IEnumerator SmallWaterLoop()
+    private IEnumerator SpawnLoop()
     {
         while (true)
         {
@@ -56,52 +54,33 @@ public class WaterDrop : MonoBehaviour
                 continue;
             }
 
-            if (characterController.currentWater >=  characterController.maxWaterCapacity)
+            float currentWater = characterController.currentWater; // 確保此欄位是 public 或 internal 可存取
+
+            // 判斷要不要掉大水或小水：
+            // 1) 如果水 <= 2 -> 持續掉大水直到 currentWater >= 6（可重複觸發）
+            // 2) 否則如果水 <= 4 -> 持續掉小水直到 currentWater >= 6（可重複觸發）
+            if (currentWater <= 2f)
             {
-                yield return new WaitForSeconds(1f);
+                while (characterController != null && characterController.currentWater < 6f)
+                {
+                    SpawnPrefab(BigWater);
+                    float wait = Random.Range(5f, 7f);
+                    yield return new WaitForSeconds(wait);
+                }
+                // 重新評估狀態
                 continue;
             }
 
-            if (characterController.currentWater <= 4f)
+            if (currentWater <= 4f)
             {
-                Debug.Log($"[WaterDrop] Spawning SmallWater, current={characterController.currentWater}");
-                SpawnPrefab(SmallWater);
-                yield return new WaitForSeconds(Random.Range(3f, 5f));
-            }
-            else
-            {
-                yield return new WaitForSeconds(1f);
-            }
-        }
-    }
-
-    private IEnumerator BigWaterLoop()
-    {
-        while (true)
-        {
-            if (characterController == null)
-            {
-                yield return new WaitForSeconds(1f);
-                if (player != null)
-                    characterController = player.GetComponent<CharacterController>();
+                while (characterController != null && characterController.currentWater < 6f)
+                {
+                    SpawnPrefab(SmallWater);
+                    float wait = Random.Range(3f, 5f);
+                    yield return new WaitForSeconds(wait);
+                }
+                // 重新評估狀態
                 continue;
-            }
-
-            if (characterController.currentWater >=  characterController.maxWaterCapacity)
-            {
-                yield return new WaitForSeconds(1f);
-                continue;
-            }
-
-            if (characterController.currentWater <= 2f)
-            {
-                Debug.Log($"[WaterDrop] Spawning BigWater, current={characterController.currentWater}");
-                SpawnPrefab(BigWater);
-                yield return new WaitForSeconds(Random.Range(5f, 7f));
-            }
-            else
-            {
-                yield return new WaitForSeconds(1f);
             }
         }
     }
@@ -121,29 +100,12 @@ public class WaterDrop : MonoBehaviour
         // apply gravity scale and drag correctly for Rigidbody2D
         rb.gravityScale = dropGravityScale;
         rb.linearDamping = dropLinearDrag;
-        rb.constraints = RigidbodyConstraints2D.FreezeRotation;
 
         // optional: use a constant fall speed instead of physics
         if (useConstantFallSpeed)
         {
             rb.gravityScale = 0f;
             rb.linearVelocity = new Vector2(0f, -Mathf.Abs(constantFallSpeed));
-        }
-
-        // Ignore collisions with walls by finding all wall colliders and ignoring them
-        Collider2D[] wallColliders = GameObject.FindGameObjectsWithTag("wall")
-            .SelectMany(go => go.GetComponents<Collider2D>())
-            .ToArray();
-
-        Collider2D waterCollider = instance.GetComponent<Collider2D>();
-        if (waterCollider == null)
-        {
-            waterCollider = instance.AddComponent<BoxCollider2D>();
-        }
-
-        foreach (Collider2D wallCollider in wallColliders)
-        {
-            Physics2D.IgnoreCollision(waterCollider, wallCollider, true);
         }
     }
 }

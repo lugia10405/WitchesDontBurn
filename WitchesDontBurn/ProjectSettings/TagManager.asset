@@ -6,11 +6,6 @@ TagManager:
   tags:
   - BigWater
   - SmallWater
-  - Window
-  - ShootingWater
-  - wall
-  - NPC
-  - ground
   layers:
   - Default
   - TransparentFX

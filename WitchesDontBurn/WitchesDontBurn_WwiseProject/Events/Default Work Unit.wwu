@@ -9,10 +9,10 @@
 						<Property Name="OverrideColor" Type="bool" Value="True"/>
 					</PropertyList>
 					<ChildrenList>
-						<Action Name="" ID="{FD6DF0B2-C9F0-4FC7-B5F0-D910DC42B90A}" ShortID="484262468">
+						<Action Name="" ID="{11B6848B-8EDB-41FF-B146-FF0B60CCE9BC}" ShortID="419509789">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="WDB_Music" ID="{D6150597-A23A-4209-9504-B63AC757FB71}" WorkUnitID="{1771321E-2843-4611-80FA-DCD0A74C5DEF}"/>
+									<ObjectRef Name="WDB_Music" ID="{46CD322A-D23E-405F-B65E-9BC0DF0F3390}" WorkUnitID="{1771321E-2843-4611-80FA-DCD0A74C5DEF}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -191,6 +191,78 @@
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="SFX_MagicHit" ID="{09A3AEE9-1091-4BB8-B297-DDF801EF0D43}" WorkUnitID="{E4FA4BBD-3582-49B1-A62C-4954FA092211}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="SFX_WitchFlyingLoop_Play" ID="{B40DF2DE-5DDD-425B-9B96-3594A20EDD12}">
+					<ChildrenList>
+						<Action Name="" ID="{F336EB03-069F-414A-97DE-7089F5363FA4}" ShortID="11293272">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="SFX_WitchFlyingLoop" ID="{5BFC4C08-3DAD-4B82-B670-2771D9BBF1D4}" WorkUnitID="{E4FA4BBD-3582-49B1-A62C-4954FA092211}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="SFX_WitchFlyingLoop_Stop" ID="{AF481EDF-E443-4AD1-ABDE-34ED03458247}">
+					<ChildrenList>
+						<Action Name="" ID="{19F42E9A-BA96-4374-9216-1312D2956420}" ShortID="782151526">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="SFX_WitchFlyingLoop" ID="{5BFC4C08-3DAD-4B82-B670-2771D9BBF1D4}" WorkUnitID="{E4FA4BBD-3582-49B1-A62C-4954FA092211}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="SFX_WaterSpray_Play" ID="{01F4D912-3CC7-4160-9A46-272F502D2B9B}">
+					<ChildrenList>
+						<Action Name="" ID="{02143DCB-1D8D-487E-A05E-9DAB209D7A2E}" ShortID="907784099">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="SFX_WaterSpray" ID="{5D1A2B72-CD5C-4697-BCAA-38A4A7F98AEC}" WorkUnitID="{62AF510D-413B-481D-A989-F14C978987CE}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="SFX_WaterSpray_Stop" ID="{4F3BFED2-C613-4CED-A3CA-9C62284C38AC}">
+					<ChildrenList>
+						<Action Name="" ID="{261AFE25-FF45-4328-84FF-16B4EB663173}" ShortID="812216504">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="SFX_WaterSpray" ID="{5D1A2B72-CD5C-4697-BCAA-38A4A7F98AEC}" WorkUnitID="{62AF510D-413B-481D-A989-F14C978987CE}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_UI_ButtonClick" ID="{5F018C4F-6DE6-4B12-8E84-D076E2826F53}">
+					<ChildrenList>
+						<Action Name="" ID="{6A43A8A8-E251-45A3-AE43-DCB27C336DCE}" ShortID="469644333">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="UI_ButtonClick" ID="{EB364BDB-A933-42E0-B9F0-21CCDD2718EA}" WorkUnitID="{347E3334-CC04-4F6A-8EE7-094CA5AB3E2A}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_UI_ButtonHover" ID="{A9AE9413-87F8-4CA4-8E87-1983E5B06DF3}">
+					<ChildrenList>
+						<Action Name="" ID="{D83213BE-8416-4B77-8F7A-576958620E36}" ShortID="177804675">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="UI_ButtonHover" ID="{812B512F-E561-48AC-8A7B-B981E7E98CDC}" WorkUnitID="{347E3334-CC04-4F6A-8EE7-094CA5AB3E2A}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

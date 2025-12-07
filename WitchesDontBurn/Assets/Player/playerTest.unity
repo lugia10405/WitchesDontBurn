@@ -1224,9 +1224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de124d5292cc0f549bcdd3862e674d03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DetectTrigger
-  inWindowRange: 0
-  inGroundRange: 0
-  npcOnWindow: {fileID: 0}
+  characterController: {fileID: 0}
 --- !u!70 &866190978
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -2309,22 +2307,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 4488111954119882613, guid: e3101eb0b3d3ec742af8fad0142714c1, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5040298985883225698, guid: e3101eb0b3d3ec742af8fad0142714c1, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5040298985883225698, guid: e3101eb0b3d3ec742af8fad0142714c1, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5040298985883225698, guid: e3101eb0b3d3ec742af8fad0142714c1, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 5040298985883225698, guid: e3101eb0b3d3ec742af8fad0142714c1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2369,20 +2351,7 @@ PrefabInstance:
       propertyPath: moveSpeed
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 5137721694952042744, guid: e3101eb0b3d3ec742af8fad0142714c1, type: 3}
-      propertyPath: shootOrigin
-      value: 
-      objectReference: {fileID: 866190987}
-    - target: {fileID: 5137721694952042744, guid: e3101eb0b3d3ec742af8fad0142714c1, type: 3}
-      propertyPath: currentWater
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 5137721694952042744, guid: e3101eb0b3d3ec742af8fad0142714c1, type: 3}
-      propertyPath: waterProjectilePrefab
-      value: 
-      objectReference: {fileID: 4265031558974433701, guid: 1b79dfd0102a0e045ab2fca88541a295, type: 3}
-    m_RemovedComponents:
-    - {fileID: 2051638818768751146, guid: e3101eb0b3d3ec742af8fad0142714c1, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
