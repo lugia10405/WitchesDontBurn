@@ -132,10 +132,18 @@ public class NPCBehaviour : MonoBehaviour
                 DetectTrigger dt = player.GetComponentInChildren<DetectTrigger>();
                 
                 // Check if player is carrying NPC and this NPC is the one being carried
-                if (cc != null && dt != null && dt.inWindowRange && dt.npcOnWindow == gameObject)
+                // Also check if NPC is moving towards player (indicating pickup)
+                if (cc != null)
                 {
-                    // NPC is being picked up by player
-                    OnBeingPickedUp();
+                    float distToPlayer = Vector2.Distance(transform.position, player.transform.position);
+                    
+                    // If player is carrying NPC or NPC is moving towards player and close enough
+                    if ((dt != null && dt.inWindowRange && dt.npcOnWindow == gameObject) ||
+                        (cc.isCarryingNPC && distToPlayer < 3f))
+                    {
+                        // NPC is being picked up by player
+                        OnBeingPickedUp();
+                    }
                 }
             }
         }
@@ -149,17 +157,83 @@ public class NPCBehaviour : MonoBehaviour
         
         isBeingPickedUp = true;
         StopAllCoroutines();
+        
+        // Set player's carrying animation parameter based on NPC type
+        SetPlayerCarryingAnimation();
+        
         StartCoroutine(DisappearAfterDelay());
+    }
+    
+    private void SetPlayerCarryingAnimation()
+    {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player == null) return;
+        
+        CharacterController cc = player.GetComponent<CharacterController>();
+        if (cc == null) return;
+        
+        Animator playerAnimator = player.GetComponent<Animator>();
+        if (playerAnimator == null) return;
+        
+        // Get NPC type from gameObject name
+        string npcName = gameObject.name.ToLower();
+        string carryingParam = "";
+        
+        // Map NPC names to carrying parameters
+        if (npcName.Contains("boy"))
+        {
+            carryingParam = "carryingBoy";
+        }
+        else if (npcName.Contains("girl"))
+        {
+            carryingParam = "carryingGirl";
+        }
+        else if (npcName.Contains("men") || npcName.Contains("man"))
+        {
+            carryingParam = "carryingMan";
+        }
+        else if (npcName.Contains("women") || npcName.Contains("woman"))
+        {
+            carryingParam = "carryingWoman";
+        }
+        else if (npcName.Contains("fish"))
+        {
+            carryingParam = "carryingFish";
+        }
+        else if (npcName.Contains("dog") || npcName.Contains("puppy"))
+        {
+            carryingParam = "carryingPuppy";
+        }
+        else if (npcName.Contains("elder"))
+        {
+            // Elder might use carryingMan or a separate parameter
+            carryingParam = "carryingMan"; // Default to man if no specific parameter
+        }
+        
+        // Set the carrying parameter to true
+        if (!string.IsNullOrEmpty(carryingParam))
+        {
+            playerAnimator.SetBool(carryingParam, true);
+        }
     }
     
     private IEnumerator DisappearAfterDelay()
     {
         yield return new WaitForSeconds(disappearDelay);
         
+        // Reset player's carrying animation before destroying
+        ResetPlayerCarryingAnimation();
+        
         if (gameObject != null)
         {
             Destroy(gameObject);
         }
+    }
+    
+    private void OnDestroy()
+    {
+        // Ensure carrying parameter is reset when NPC is destroyed
+        ResetPlayerCarryingAnimation();
     }
     
     private void FindAssociatedWindow()
@@ -241,6 +315,9 @@ public class NPCBehaviour : MonoBehaviour
     // Called when NPC is dropped by player (new instance created)
     public void OnDropped()
     {
+        // Reset player's carrying animation parameter
+        ResetPlayerCarryingAnimation();
+        
         // Set isWalking trigger
         if (animator != null)
         {
@@ -257,6 +334,55 @@ public class NPCBehaviour : MonoBehaviour
         if (isFish)
         {
             StartCoroutine(DisappearFish());
+        }
+    }
+    
+    private void ResetPlayerCarryingAnimation()
+    {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player == null) return;
+        
+        Animator playerAnimator = player.GetComponent<Animator>();
+        if (playerAnimator == null) return;
+        
+        // Get NPC type from gameObject name
+        string npcName = gameObject.name.ToLower();
+        string carryingParam = "";
+        
+        // Map NPC names to carrying parameters
+        if (npcName.Contains("boy"))
+        {
+            carryingParam = "carryingBoy";
+        }
+        else if (npcName.Contains("girl"))
+        {
+            carryingParam = "carryingGirl";
+        }
+        else if (npcName.Contains("men") || npcName.Contains("man"))
+        {
+            carryingParam = "carryingMan";
+        }
+        else if (npcName.Contains("women") || npcName.Contains("woman"))
+        {
+            carryingParam = "carryingWoman";
+        }
+        else if (npcName.Contains("fish"))
+        {
+            carryingParam = "carryingFish";
+        }
+        else if (npcName.Contains("dog") || npcName.Contains("puppy"))
+        {
+            carryingParam = "carryingPuppy";
+        }
+        else if (npcName.Contains("elder"))
+        {
+            carryingParam = "carryingMan"; // Default to man if no specific parameter
+        }
+        
+        // Reset the carrying parameter to false
+        if (!string.IsNullOrEmpty(carryingParam))
+        {
+            playerAnimator.SetBool(carryingParam, false);
         }
     }
     
