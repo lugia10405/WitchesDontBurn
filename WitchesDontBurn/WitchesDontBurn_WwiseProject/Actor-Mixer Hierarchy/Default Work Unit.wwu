@@ -343,6 +343,7 @@
 						<ActiveSource Name="SFX_WitchFlyingLoop" ID="{FA2AA40A-933B-46C2-A220-D292E51E2670}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
+				<WorkUnit Name="UI" ID="{347E3334-CC04-4F6A-8EE7-094CA5AB3E2A}" PersistMode="Reference"/>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>
