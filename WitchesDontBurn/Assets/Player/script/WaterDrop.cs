@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Linq;
 using UnityEngine;
 
 public class WaterDrop : MonoBehaviour
@@ -20,7 +21,7 @@ public class WaterDrop : MonoBehaviour
     public float dropLinearDrag = 5f;
     [Header("Alternate fall mode")]
     [Tooltip("When true, spawned drops ignore gravity and use a constant downward speed.")]
-    public bool useConstantFallSpeed = false;
+    public bool useConstantFallSpeed = true;
     [Tooltip("Constant downward speed (units/sec) when using constant fall mode")]
     public float constantFallSpeed = 1f;
     
@@ -34,7 +35,8 @@ public class WaterDrop : MonoBehaviour
     
     private void OnEnable()
     {
-        StartCoroutine(SpawnLoop());
+        StartCoroutine(SmallWaterLoop());
+        StartCoroutine(BigWaterLoop());
     }
 
     private void OnDisable()
@@ -42,7 +44,7 @@ public class WaterDrop : MonoBehaviour
         StopAllCoroutines();
     }
 
-    private IEnumerator SpawnLoop()
+    private IEnumerator SmallWaterLoop()
     {
         while (true)
         {
@@ -54,28 +56,52 @@ public class WaterDrop : MonoBehaviour
                 continue;
             }
 
-            float currentWater = characterController.currentWater; 
-
-            if (currentWater <= 2f)
+            if (characterController.currentWater >=  characterController.maxWaterCapacity)
             {
-                while (characterController != null && characterController.currentWater < 6f)
-                {
-                    SpawnPrefab(BigWater);
-                    float wait = Random.Range(5f, 7f);
-                    yield return new WaitForSeconds(wait);
-                }
+                yield return new WaitForSeconds(1f);
                 continue;
             }
 
-            if (currentWater <= 4f)
+            if (characterController.currentWater <= 4f)
             {
-                while (characterController != null && characterController.currentWater < 6f)
-                {
-                    SpawnPrefab(SmallWater);
-                    float wait = Random.Range(3f, 5f);
-                    yield return new WaitForSeconds(wait);
-                }
+                Debug.Log($"[WaterDrop] Spawning SmallWater, current={characterController.currentWater}");
+                SpawnPrefab(SmallWater);
+                yield return new WaitForSeconds(Random.Range(3f, 5f));
+            }
+            else
+            {
+                yield return new WaitForSeconds(1f);
+            }
+        }
+    }
+
+    private IEnumerator BigWaterLoop()
+    {
+        while (true)
+        {
+            if (characterController == null)
+            {
+                yield return new WaitForSeconds(1f);
+                if (player != null)
+                    characterController = player.GetComponent<CharacterController>();
                 continue;
+            }
+
+            if (characterController.currentWater >=  characterController.maxWaterCapacity)
+            {
+                yield return new WaitForSeconds(1f);
+                continue;
+            }
+
+            if (characterController.currentWater <= 2f)
+            {
+                Debug.Log($"[WaterDrop] Spawning BigWater, current={characterController.currentWater}");
+                SpawnPrefab(BigWater);
+                yield return new WaitForSeconds(Random.Range(5f, 7f));
+            }
+            else
+            {
+                yield return new WaitForSeconds(1f);
             }
         }
     }
@@ -95,6 +121,7 @@ public class WaterDrop : MonoBehaviour
         // apply gravity scale and drag correctly for Rigidbody2D
         rb.gravityScale = dropGravityScale;
         rb.linearDamping = dropLinearDrag;
+        rb.constraints = RigidbodyConstraints2D.FreezeRotation;
 
         // optional: use a constant fall speed instead of physics
         if (useConstantFallSpeed)
@@ -102,5 +129,39 @@ public class WaterDrop : MonoBehaviour
             rb.gravityScale = 0f;
             rb.linearVelocity = new Vector2(0f, -Mathf.Abs(constantFallSpeed));
         }
+
+        // -------------------------------
+        // Ignore collisions with walls
+        // -------------------------------
+        Collider2D waterCollider = instance.GetComponent<Collider2D>();
+        if (waterCollider == null)
+        {
+            waterCollider = instance.AddComponent<BoxCollider2D>();
+        }
+
+        // 找到所有牆 wall colliders
+        Collider2D[] wallColliders =
+            GameObject.FindGameObjectsWithTag("wall")
+                .SelectMany(go => go.GetComponents<Collider2D>())
+                .ToArray();
+
+        // 找到所有地板 ground colliders
+        Collider2D[] groundColliders =
+            GameObject.FindGameObjectsWithTag("ground")
+                .SelectMany(go => go.GetComponents<Collider2D>())
+                .ToArray();
+
+        // 忽略牆
+        foreach (Collider2D wall in wallColliders)
+        {
+            Physics2D.IgnoreCollision(waterCollider, wall, true);
+        }
+
+        // 忽略地板
+        foreach (Collider2D ground in groundColliders)
+        {
+            Physics2D.IgnoreCollision(waterCollider, ground, true);
+        }
+
     }
 }
